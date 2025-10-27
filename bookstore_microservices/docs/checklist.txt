@@ -1,0 +1,7 @@
+Submission checklist:
+- [ ] Full source code for user-service and catalog-service
+- [ ] Dockerfiles and docker-compose.yml
+- [ ] CI workflow files (.github/workflows/ci.yml) in each service
+- [ ] Unit tests included in each service
+- [ ] docs/submission_notes.md with assumptions and run instructions
+- [ ] Screenshots demonstrating CI (place under docs/screenshots/)

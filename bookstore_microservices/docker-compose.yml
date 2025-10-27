@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: bookstore
+      MYSQL_USER: bookstore
+      MYSQL_PASSWORD: bookstore
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  user-service:
+    build: ./user-service
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=bookstore
+      - DB_PASS=bookstore
+      - DB_NAME=bookstore
+    ports:
+      - "3000:3000"
+
+  catalog-service:
+    build: ./catalog-service
+    ports:
+      - "4000:4000"
+
+volumes:
+  mysql-data:

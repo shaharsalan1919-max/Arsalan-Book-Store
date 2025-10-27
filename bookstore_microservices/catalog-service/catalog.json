@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "title": "Example Book",
+    "author": "Author A",
+    "price": 9.99,
+    "available": true
+  }
+]
